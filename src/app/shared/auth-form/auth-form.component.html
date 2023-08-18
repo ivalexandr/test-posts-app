@@ -1,0 +1,40 @@
+<div class="auth-form">
+	<form class="auth-form--self" [formGroup]="authForm" (ngSubmit)="submit()">
+		<mat-form-field>
+			<mat-label>{{ 'AUTH.LOGIN' | translate }}</mat-label>
+			<input matInput type="text" formControlName="login">
+			<mat-error *ngIf="login.hasError('required')">
+				{{ 'ERRORS.REQUIRED_FIELD' | translate }}
+			</mat-error>
+			<mat-error *ngIf="login.hasError('pattern')">
+				{{ 'ERRORS.LOGIN_PATTERN' | translate }}
+			</mat-error>
+			<mat-error *ngIf="login.hasError('minlength')">
+				{{ 'ERRORS.LOGIN_MIN' | translate }}
+			</mat-error>
+		</mat-form-field>
+		<mat-form-field>
+			<mat-label>{{ 'AUTH.PASSWORD' | translate }}</mat-label>
+			<input matInput [type]="showPassword ? 'text' : 'password'" formControlName="password">
+			<button type="button" mat-icon-button matSuffix (click)="showPassword = !showPassword">
+				<mat-icon>{{ showPassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+			</button>
+			<mat-error *ngIf="password.hasError('required')">
+				{{ 'ERRORS.REQUIRED_FIELD' | translate }}
+			</mat-error>
+			<mat-error *ngIf="password.hasError('pattern')">
+				{{ 'ERRORS.PASSWORD_PATTERN' | translate }}
+			</mat-error>
+			<mat-error *ngIf="password.hasError('minlength')">
+				{{ 'ERRORS.PASSWORD_MIN' | translate }}
+			</mat-error>
+		</mat-form-field>
+		<div class="auth-form--btn">
+			<button 
+				type="submit"
+				mat-raised-button
+				[disabled]="invalidForm" 
+				color="primary">{{ 'AUTH.SIGN_IN' | translate }}</button>
+		</div>
+	</form>
+</div>

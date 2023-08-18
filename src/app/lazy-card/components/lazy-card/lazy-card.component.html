@@ -1,0 +1,20 @@
+<app-loader *ngIf="postIsLoading; else card"></app-loader>
+<ng-template #card>
+	<div [@fadeInOut]>
+		<div class="button-back">
+			<button [routerLink]="['/']" mat-fab color="primary">
+				<mat-icon>arrow_back</mat-icon>
+			</button>
+		</div>
+		<div class="lazy-card" *ngIf="post">
+			<div class="lazy-card-header">
+				<p class="lazy-card-header--id">{{ 'LAZY_CARD.CARD_ID' | translate }}: {{ post.id }}</p>
+				<p class="lazy-card-header--user">{{ 'LAZY_CARD.USER_ID' | translate }}: {{ post.userId }}</p>
+			</div>
+			<h4 class="lazy-card-title mat-headline-4">{{ post.title }}</h4>
+			<p class="lazy-card-body">{{ post.body }}</p>
+		</div>
+	</div>
+</ng-template>
+
+

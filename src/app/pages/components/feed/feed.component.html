@@ -1,0 +1,7 @@
+<app-loader *ngIf="postsIsLoading; else feed"></app-loader>
+
+<ng-template #feed>
+	<div class="feed" [@fadeInOut]>
+		<app-post-card *ngFor="let post of posts" [post]="post"></app-post-card>
+	</div>
+</ng-template>

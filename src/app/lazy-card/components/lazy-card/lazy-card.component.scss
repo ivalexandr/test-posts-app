@@ -1,0 +1,29 @@
+@use '../../../variables' as v;
+
+.button-back {
+	margin-bottom: 20px;
+}
+
+.lazy-card {
+	border: 1px solid v.$border-lazy-card;
+	border-radius: 20px;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	color: v.$white-text;
+
+	&-header {
+		&--id {
+			font-size: 25px;
+		}
+		&--user {
+			font-size: 17px;
+		}
+	}
+
+	&-title {
+		text-transform: uppercase;
+		margin-bottom: 0;
+	}
+}

@@ -1,0 +1,14 @@
+.auth-form {
+	&--self {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&--btn {
+		display: flex;
+		margin-top: 30px;
+		button {
+			width: 100%;
+		}
+	}
+}

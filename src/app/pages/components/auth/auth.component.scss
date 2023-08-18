@@ -1,0 +1,13 @@
+@use '../../../variables' as v;
+
+.auth-page {
+	padding-top: 30px;
+	&--heading {
+		text-align: center;
+		color: v.$white-text;
+	}
+	&--wrapper {
+		max-width: 500px;
+		margin: 0 auto;
+	}
+}

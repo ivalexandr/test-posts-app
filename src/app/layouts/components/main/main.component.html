@@ -1,0 +1,27 @@
+<mat-toolbar>
+	<span class="logo" [routerLink]="['/']">
+		{{ 'MAIN.APP' | translate }}
+	</span>
+	<span class="spacer"></span>
+	<button [matMenuTriggerFor]="menu" mat-icon-button>
+		<mat-icon>menu</mat-icon>
+	</button>
+	<mat-menu #menu>
+		<ng-container *ngIf="user$ | async; else need">
+			<menu mat-menu-item>
+				{{ 'AUTH.YOUR_USER' | translate: { login: user?.login } }}
+			</menu>
+			<button mat-menu-item (click)="signOut()">
+				<mat-icon>logout</mat-icon>
+				<span>{{ 'AUTH.SIGN_OUT' | translate }}</span>
+			</button>
+		</ng-container>
+		<ng-template #need>
+			<menu mat-menu-item>{{ 'AUTH.NEED_SIGN_IN' | translate }}</menu>
+		</ng-template>
+	</mat-menu>
+</mat-toolbar>
+
+<div class="wrapper">
+	<ng-content></ng-content>
+</div>

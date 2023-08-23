@@ -4,4 +4,4 @@
 2. You can see post list.
 3. You can see post item on individual page.
 
-## Yoy can see this app on the Netlify <a href="https://tests-posts.netlify.app">there</a>
+## Yoy can see this app on the Netlify <a href="https://tests-posts.netlify.app">here</a>
